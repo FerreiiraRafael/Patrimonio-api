@@ -1,12 +1,20 @@
 package br.com.senai.patrimonio;
 
+import br.com.senai.patrimonio.avaliacao.Enum.Nivel;
+import br.com.senai.patrimonio.avaliacao.Enum.StatusEvento;
+import br.com.senai.patrimonio.avaliacao.Evento;
+import br.com.senai.patrimonio.avaliacao.Participante;
 import br.com.senai.patrimonio.model.Empresa;
 import br.com.senai.patrimonio.model.Endereco;
 import br.com.senai.patrimonio.model.Funcionario;
 import br.com.senai.patrimonio.model.Sala;
 import br.com.senai.patrimonio.model.enums.Cargo;
+import br.com.senai.patrimonio.model.enums.Pagamento;
+import br.com.senai.patrimonio.model.enums.PagamentoComposto;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import javax.crypto.spec.PSource;
 
 @SpringBootApplication
 public class PatrimonioApplication {
@@ -14,34 +22,13 @@ public class PatrimonioApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(PatrimonioApplication.class, args);
-
-		Empresa empresa = new Empresa();
-		empresa.setRazaoSocial("Senai LTDA");
-		System.out.println(empresa.getRazaoSocial());
-
-		Endereco endereco = new Endereco();
-		endereco.setRua("Bela vista");
-		System.out.println(endereco.getRua());
-		System.out.println(endereco.getBairro());
-
-		empresa.setEndereco(endereco);
-		System.out.println(empresa.getEndereco().getRua());
-
-		Endereco enderecoComArgumentos = new Endereco("Líbano jose gomes",
-				"489", "Perto do posto de saúde",
-				"Santa luzia","Criciúma", "SC");
-		System.out.println(enderecoComArgumentos.getBairro());
-
-		Sala sala = new Sala();
-
-		Funcionario funcionario = new Funcionario(
-				35L,"Mariazinha","13456789",
-				Cargo.GERENTE, empresa, sala
-		);
-
-		System.out.println(funcionario.getCpf());
-
+	Participante participante = new Participante("rafael","48996119904","Andrade10rafa@gmail.com","1234567", Nivel.avancado);
+		System.out.println("participante: " + participante.getNome() + ", " + participante.getTelefone() + ", " + participante.getEmail() + ", " + participante.getMatricula() + ", " + participante.getNivel());
+	// evento
+		Evento evento = new Evento(1, "Palestra sobre IA", "Auditório Senai", StatusEvento.EVENTO_PLANEJADO, participante);
+		System.out.println("evento: "+ evento.getNome()+" local: "+ evento.getLocal() +" Status " +evento.getStatus().getDescricao());
 
 	}
+
 
 }

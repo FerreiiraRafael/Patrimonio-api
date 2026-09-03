@@ -11,12 +11,12 @@ public enum PagamentoComposto {
     private final String descricao;
     private final String situacao;
 
-    PagamentoComposto(String descicao, String situacao) {
-        this.descricao = descicao;
+    PagamentoComposto(String descricao, String situacao) {
+        this.descricao = descricao;
         this.situacao = situacao;
     }
 
-    public String getDescicao() {
+    public String getDescricao() {
         return descricao;
     }
 
