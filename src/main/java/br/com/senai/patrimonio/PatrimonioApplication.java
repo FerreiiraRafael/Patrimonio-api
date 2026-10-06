@@ -109,7 +109,7 @@ public class PatrimonioApplication {
 
 		Equipamento equipamento = new Equipamento("mesa",800.00);
 		Equipamento computador= new Computador("notebook", 5000);
-		equipamento veiculo= new Veiculo()
+
 
 
 
