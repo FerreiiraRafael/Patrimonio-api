@@ -1,5 +1,8 @@
 package br.com.senai.patrimonio;
 
+import br.com.senai.patrimonio.atividade.Computador;
+import br.com.senai.patrimonio.atividade.Equipamento;
+import br.com.senai.patrimonio.atividade.Veiculo;
 import br.com.senai.patrimonio.avaliacao.Participante;
 import br.com.senai.patrimonio.avaliacao.enums.Nivel;
 import br.com.senai.patrimonio.model.*;
@@ -103,6 +106,10 @@ public class PatrimonioApplication {
 		funcionario1.setCpf("12345678");
 		funcionario1.setCargo(Cargo.DIRETOR);
 		System.out.println(funcionario1.getIdentificacao());
+
+		Equipamento equipamento = new Equipamento("mesa",800.00);
+		Equipamento computador= new Computador("notebook", 5000);
+		equipamento veiculo= new Veiculo()
 
 
 
